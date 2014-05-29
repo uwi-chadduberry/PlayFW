@@ -6,10 +6,13 @@ package models;
 
 import java.util.List;
 import java.util.ArrayList;
+import play.data.validation.Constraints;
 
 public class Product
 {
+   @Constraints.Required
    public String ean;
+   @Constraints.Required
    public String name;
    public String description;
    private static List<Product> products;
