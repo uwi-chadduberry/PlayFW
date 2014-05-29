@@ -32,11 +32,11 @@ public class Product
    static
    {
       products = new ArrayList<Product>();
-      products.add( new Product( "1111111111111", "Paperclips 1", "Paperclips description 1" ) );
-      products.add( new Product( "2222222222222", "Paperclips 2", "Paperclips description 2" ) );
-      products.add( new Product( "3333333333333", "Paperclips 3", "Paperclips description 3" ) );
-      products.add( new Product( "4444444444444", "Paperclips 4", "Paperclips description 4" ) );
-      products.add( new Product( "5555555555555", "Paperclips 5", "Paperclips description 5" ) );
+      products.add( new Product( "F2PMN", "Team Fortress 2 Game Card", "Game card ID" ) );
+      products.add( new Product( "D0SPL", "Facebook Customer key", "Billing account key" ) );
+      products.add( new Product( "WM908", "Twitter Reset pass", "Twitter data plan pass" ) );
+      products.add( new Product( "128GJ", "SoundCloud Monthly Bill", "Bill access code" ) );
+      products.add( new Product( "EZ780", "GrooveShark Account", "Account number" ) );
    }
 
    public static List<Product> findAll()
