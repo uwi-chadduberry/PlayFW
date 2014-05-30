@@ -31,7 +31,7 @@ public class Application extends Controller {
         else
         {
             Task.create( filledForm.get() );
-            return redirect( routes.Application.tasks() );
+            return redirect( controllers.routes.Application.task() );
         }
     }
 
