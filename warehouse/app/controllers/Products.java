@@ -5,6 +5,7 @@ package controllers;
  */
 
 import models.Product;
+import org.apache.commons.lang3.StringUtils;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -16,9 +17,18 @@ public class Products extends Controller
 {
    private static final Form<Product> productForm = Form.form( Product.class );
 
-   public static Result list()
+   public static Result index()
+   {
+      return redirect( controllers.routes.Products.list( 0 ) );
+   }
+
+   public static Result list( Integer page )
    {
       List<Product> products = Product.findAll();
+      /*if ( request().accepts( "text/plain" ) )
+      {
+         return ok( StringUtils.join( products, "\n" ) );
+      }*/
       return ok( list.render( products ) );
    }
 
@@ -51,7 +61,7 @@ public class Products extends Controller
       Product product = boundForm.get();
       product.save();
       flash( "success", String.format( "Successfully added product %s", product ) );
-      return redirect( controllers.routes.Products.list() );
+      return redirect( controllers.routes.Products.list( 1 ) );
    }
 
    public static Result delete( String ean )
@@ -63,6 +73,6 @@ public class Products extends Controller
       }
 
       Product.remove( product );
-      return redirect( controllers.routes.Products.list() );
+      return redirect( controllers.routes.Products.list( 1 ) );
    }
 }
